@@ -1,0 +1,7 @@
+services:
+  claude-code-playwright-python:
+    command:
+      - 'uv run playwright install; uv run pytest'
+    entrypoint:
+      - bash
+      - -c

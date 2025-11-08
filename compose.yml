@@ -1,0 +1,21 @@
+services:
+  claude-code-playwright-python:
+    build:
+      args:
+        DOCKER_IMAGE_TAG_PLAYWRIGHT: ${DOCKER_IMAGE_TAG_PLAYWRIGHT:?err}
+        VERSION_UV: ${VERSION_UV:?err}
+        VERSION_CLAUDE_CODE: ${VERSION_CLAUDE_CODE:?err}
+      context: .
+    entrypoint:
+      - /bin/bash
+    image: futureys/claude-code-playwright-python:development
+    user: root
+    volumes:
+      - .:/workspace
+      - /workspace/.venv
+      - /workspace/.cache/ms-playwright
+      # - Using uv in Docker | uv
+      #   https://docs.astral.sh/uv/guides/integration/docker/#caching
+      - uv-cache:/root/.cache/uv
+volumes:
+  uv-cache:

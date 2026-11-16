@@ -11,6 +11,9 @@ services:
         # - @anthropic-ai/claude-code - npm
         #   https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions
         VERSION_CLAUDE_CODE: 2.1.311
+        # - Commits · yukihiko-shinoda/claude-code-settings-file
+        #   https://github.com/yukihiko-shinoda/claude-code-settings-file/commits/main/
+        VERSION_MANAGED_SETTINGS_JSON: ca5f37a52c0321e076c9db16abe8fcf383b7f032
       context: .
     entrypoint:
       - /bin/bash
